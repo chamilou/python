@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang ="ru">
+<head>
+	<title>  {%block title%} {%endblock%} </title>
+	<script type="text/javascript" src="site_media/jquery.js"></script>
+	<link rel="stylesheet" href="/site_media/css.css" type="text/css" />
+</head>
+
+<body {%block color%} bgcolor = '0.197.255' {%endblock%}>
+<div id = "site_header"> My Site </div>
+<hr>
+<p>
+<p>
+<div id = "menu">
+
+ <a href ='/'>AboutUs </a> 
+{%if user.is_authenticated %}
+(<a href ='/logout'>Logout</a>)
+
+  {%else%} 
+ <a href ='login'>Login</a>
+{%endif%}
+ <a href ='/register'>Register</a> 
+ <a href =''> Main </a> 
+<a href ='/shoping_page'>Shop </a> 
+ <a href ='/contactMe'>CONTACT ME </a> 
+
+</div >
+<p>
+<div id ="content" >
+Welcome   {{user.username}}
+
+     {%block content%} {%endblock%}
+     
+</div >
+
+
+<footer>
+Thanks for visiting. All right reserved @2015
+</footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+ 
+#site_header{
+text-align:left;
+font-size:35px;
+padding:5px;
+margin:auto;
+
+}
+
+ 
+ input{
+ display:block;
+color:GREY;
+
+ }
+ 
+#contactMe{
+display:block;
+padding:10em;
+
+width:40%;
+height:50%;
+
+}
+
+body{
+//transform:skew(-5deg,-7deg);
+    width:70%;
+    height:100%;
+	background-color: ;
+	display:table;
+	width:70%;
+	padding:15px;
+	margin:auto;
+}
+
+.item_color{
+
+font-family: Verdana;
+    font-size: 20px;
+    background-color:cyan;
+    text-align: center;
+    border: #B1B1B1 solid;
+    border-color:blue;
+    
+}
+
+
+
+#menu a {
+text-decoration:none;
+}
+
+#menu {
+    font-family: Verdana;
+    font-size: 20px;
+    background-color:cyan;
+    text-align: center;
+    border: #B1B1B1 solid;
+    border-color:blue;
+    border-width: 10 1px 1 1;
+    padding: 10px 17px 10px 12px;   
+}
+
+
+footer{
+position:fixed;
+bottom:0px;
+text-align:center;
+margin:auto;
+}
