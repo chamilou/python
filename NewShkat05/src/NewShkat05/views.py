@@ -8,6 +8,6 @@ from django.template.context import RequestContext
 
 
 def welcome_page (request):
-    page_title = 'Musical Instruments and Sheet Music for Musicians'
-    doc="HalloMyFriend it's me"
+    page_title = 'Шкатулка'
+    
     return render_to_response('index.html',locals())
