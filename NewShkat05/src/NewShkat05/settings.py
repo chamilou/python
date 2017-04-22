@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 from django.conf.global_settings import STATIC_ROOT
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+TEMPLATE_DIRS =(os.path.join(os.path.dirname(__file__), 'templates'),)
 
 
 # Quick-start development settings - unsuitable for production
