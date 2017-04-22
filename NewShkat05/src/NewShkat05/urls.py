@@ -7,6 +7,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'NewShkat05.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url('^$',welcome_page),
+    url('^$',contact_me),
 
     url(r'^admin/', include(admin.site.urls)),
 )
