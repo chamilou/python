@@ -90,6 +90,6 @@ STATICFILES_DIRS = (
 # Put strings here, like "/home/html/static" or "C:/www/django/static".
 # Always use forward slashes, even on Windows.
 # Don't forget to use absolute paths, not relative paths.
-'/Users/shamil/git/python/NewShkat05/src/NewShkat05/site_media/css.css'
+'/Users/shamil/git/python/NewShkat05/src/NewShkat05/site_media/css.css',
 
 )
