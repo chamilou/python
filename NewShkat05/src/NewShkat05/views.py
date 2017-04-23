@@ -19,3 +19,11 @@ def contact_me(request):
     address= 'мой адрес:'
     
     return render_to_response('contact_me.html',locals())
+def aboutUs (request):
+    page_title = 'Про нас'
+    
+    return render_to_response('aboutUS.html',locals())
+def category (request):
+    page_title = 'Категории'
+    
+    return render_to_response('category.html',locals())
