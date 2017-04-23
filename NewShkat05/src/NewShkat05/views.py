@@ -3,9 +3,27 @@ Created on 21 Apr 2017
 
 @author: shamil
 '''
+from django.contrib import auth
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
+from django.contrib.auth import authenticate, login
+from NewShkat05.models import User
+from django.http import request
+from django.http import HttpResponse
+from django.contrib.auth.models import User
 
+def login(request):
+    title = 'login'
+    
+    #username=request.POST['username']
+   # password=request.POST['password']
+    #user =auth.authenticate(username= username,password = password)
+    
+    return render_to_response('registration/login.html', locals(),RequestContext(request))
+
+def logout(request):
+    
+    return render_to_response('logout.html')
 
 def welcome_page (request):
     page_title = 'Шкатулка'

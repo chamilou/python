@@ -13,9 +13,10 @@ text-decoration:none;
 }
 
 #menu {
+	float:right;
     font-family: Verdana;
     font-size: 20px;
-    background-color:cyan;
+    background-color:pink;
     text-align: center;
     border: #B1B1B1 solid;
     border-color:blue;

@@ -1,8 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from NewShkat05.views import *
-from django.contrib.auth import logout, login
+import django.contrib.auth as auth_log
 
 urlpatterns = patterns('',
     # Examples:
@@ -10,8 +9,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     url('^$',welcome_page),
     url('^contact_me$',contact_me),
-    url('^login$',login),
-    url('^logout$',logout),
+     url(r'^login/$', login),
+    url(r'^logout/$', auth_log.logout, name='logout'),
     url('^aboutUs$',aboutUs),
     url('^category$',category),
 
