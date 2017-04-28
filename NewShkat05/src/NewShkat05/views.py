@@ -11,19 +11,21 @@ from NewShkat05.models import User
 from django.http import request
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from NewShkat05.forms import RegisterForm
 
 def login(request):
     title = 'login'
     
-    #username=request.POST['username']
-   # password=request.POST['password']
-    #user =auth.authenticate(username= username,password = password)
+    username=request.POST['username']
+    password=request.POST['password']
+    user =auth.authenticate(username= username,password = password)
     
     return render_to_response('registration/login.html', locals(),RequestContext(request))
 
 def logout(request):
-    
-    return render_to_response('logout.html')
+    title ="Logout"
+    message = " You are logout now , See you soon"
+    return render_to_response('registration/logout.html',locals())
 
 def welcome_page (request):
     page_title = 'Шкатулка'
@@ -41,6 +43,12 @@ def aboutUs (request):
     page_title = 'Про нас'
     
     return render_to_response('aboutUS.html',locals())
+def register(request):
+    form=RegisterForm().getAll()
+    
+    
+    
+    return render_to_response(("register.html", locals()))
 def category (request):
     page_title = 'Категории'
     
