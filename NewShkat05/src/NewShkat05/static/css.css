@@ -21,10 +21,13 @@ text-decoration:none;
     border: #B1B1B1 solid;
     border-color:blue;
     border-width: 10 1px 1 1;
-    padding: 10px 17px 10px 12px;   
+    padding: 5px 17px 10px 12px;   
+    margin:2px 20px 1px ;
 }
 footer{
+	font-size:1.5rem;
 position:fixed;
+float:center;
 bottom:0px;
 text-align:center;
 margin:auto;

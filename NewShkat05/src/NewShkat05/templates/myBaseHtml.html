@@ -1,69 +1,45 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html >
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 {% load static from staticfiles %}
-  <head>
-  <link rel="stylesheet" href="	/static/css.css" type="text/css" media ="all"/>
-    <meta charset="utf-8">
-    <title>
-    {%block title%}
-    {%endblock%}
-    </title>
-    
-  </head>
-  <body>
-  <div id = "menu">
+<head>
+<link rel="stylesheet" href="	/static/css.css" type="text/css"
+	media="all" />
+<meta charset="utf-8">
+	<title>{%block title%} {%endblock%}</title>
+</head>
+<body>
+	<div class="body">
 
- <a href ='/aboutUs'>Про нас </a> 
-{%if user.is_authenticated %}
-(<a href ='logout'>Выход</a>)
 
-  {%else%} 
- <a href ='login'>Войти</a>
-{%endif%}
- <a href ='/register'>Регистрация</a> 
- <a href =''> </a> 
-<a href ='/category'> Категории </a> 
- <a href ='/contact_me'>Связаться с нами </a> 
- <a href ='/logout'>Выход </a> 
+		<div id="menu">
 
-</div >
+			<a href='/aboutUs'>Про нас </a> {%if user.is_authenticated %} <a
+				href='logout'>Выход</a> {%else%} <a href='login'>Войти</a> {%endif%}
+			<a href='/register'>Регистрация</a> <a href=''> </a> <a
+				href='/category'> Категории </a> <a href='/contact_me'>Связаться
+				с нами </a> <a href='/logout'>Выход </a>
+
+		</div>
+		<p>
+
+{%block body%}
 <p>
-  {%block body%}
-  <div class ="body">
+</p>
+
+			{%block content%}    {%endblock%} 
 
 
 
 
-{%block content%}
 
+
+
+			<!-- page content -->
 {%endblock%}
-
-{%endblock%}
-
-
-
-{%block footer%}
-
-{%endblock%}
-
-
-  
-  
-  
-    <!-- page content -->
-  </body>
-  </div>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+<footer class = "footer">
+{%block footer%} All rights reserved {%endblock%}
+</footer>
+</div>
 </html>

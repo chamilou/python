@@ -1,26 +1,16 @@
-{% extends 'myBaseHtml.html'%}
-{%block title%}
+{% extends 'myBaseHtml.html'%} {%block title%} {{page_title}} {%endblock%}
 
-{{page_title}}
-{%endblock%}
-{%block body%}
-<div class ="body">
-<p>
-Обратная связь:
-  <p>
-{{tel}}
-{{tel_mob}}
-<p>
-{{email}}
-<p>
-{{address}}
-<p>
-
-<p>
-
-{%block content%}
-here Content!!
-{%endblock%}
+ {%block body%}
+<div class="body">
+ {%block content%}
+ <section>
+	<p>Обратная связь:</p>
+	<p>{{tel}} {{tel_mob}}</p>
+	<p>{{email}}</p>
+	<p>{{address}}</p>
+	<p></p>
+	<p> here Content!! {%endblock%}</p>
 </div>
+ </section>
 
 {%endblock%}

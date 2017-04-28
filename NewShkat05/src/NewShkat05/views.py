@@ -11,7 +11,7 @@ from NewShkat05.models import User
 from django.http import request
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from NewShkat05.forms import RegisterForm
+from NewShkat05.forme import RegisterForm
 
 def login(request):
     title = 'login'
@@ -40,15 +40,18 @@ def contact_me(request):
     
     return render_to_response('contact_me.html',locals())
 def aboutUs (request):
-    page_title = 'Про нас'
+    title = 'Про нас'
     
     return render_to_response('aboutUS.html',locals())
 def register(request):
-    form=RegisterForm().getAll()
+    
+    form=RegisterForm()
+    
+    return render_to_response('register.html',locals())
     
     
     
-    return render_to_response(("register.html", locals()))
+    
 def category (request):
     page_title = 'Категории'
     
