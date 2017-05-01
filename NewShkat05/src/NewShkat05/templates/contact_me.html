@@ -1,16 +1,9 @@
 {% extends 'myBaseHtml.html'%} {%block title%} {{page_title}} {%endblock%}
 
- {%block body%}
-<div class="body">
- {%block content%}
- <section>
-	<p>Обратная связь:</p>
-	<p>{{tel}} {{tel_mob}}</p>
-	<p>{{email}}</p>
-	<p>{{address}}</p>
-	<p></p>
-	<p> here Content!! {%endblock%}</p>
-</div>
- </section>
-
-{%endblock%}
+{%block content%}
+<form action ="" method ="POST">
+{%csrf_token%} 
+{{form.as_p}}
+<input type = "submit" value = "Отпрвить">
+</form>
+{%endblock content%}

@@ -1,8 +1,7 @@
 {% extends 'myBaseHtml.html' %} {%block title %} {{title}} {%endblock%}
 
-{% block content %}
 
-
+{% block login %}
 <div id="input">
 	<form action="" method='POST'>
 		{%csrf_token%} <label for="username"> Логин:</label> <input
@@ -18,4 +17,8 @@ or
 <p>
 	<a href='/register'>register</a>
 </p>
+{% endblock login %}
+
+{% block content %}
+Login page
 {% endblock content %}

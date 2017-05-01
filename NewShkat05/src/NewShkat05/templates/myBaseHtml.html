@@ -14,30 +14,31 @@
 
 	{%block menu%}
 	<div id="menu">
+	{%if user.is_authenticated %}
 		<a href='/register'>Регистрация</a> <a href=''> </a> <a
 			href='/category'> Категории </a> <a href='/contact_me'>Связаться
-			с нами </a> <a href='/aboutUs'>Про нас </a> {%if user.is_authenticated %}
-		<a href='/logout'>Выход</a> {%endif%} {%endblock menu%}
+			с нами </a> <a href='/aboutUs'>Про нас </a>
+	
+		{%else %}
+		
+		<a href='/login'>Login</a>
+		 
+		<a href='/register'>Регистрация</a> <a href=''> </a> <a
+			href='/category'> Категории </a> <a href='/contact_me'>Связаться
+			с нами </a> <a href='/aboutUs'>Про нас </a>
+		<a href='/logout'>Выход</a> 
+		
+	{%endif%}
+		{%endblock menu%}
 	</div>
 
 	{%block login%}
 
-	<div id="input">
-		<form action="" method='POST'>
-			{%csrf_token%} <label for="username"> Логин:</label> <input
-				type="text" name="username" value="" id="username"> <label
-				for="password">Пароль:</label> <input type="password"
-				name="password" value="" id="password"> <input type="submit"
-				value="login" /> <input type="hidden" name="next"
-				value="{{ next|escape }}" />
-
-		</form>
-	</div>
-	<p></p>
-
 	{%endblock login%}
 
-	<div id="contenu">{%block content%} {%endblock content%}</div>
+	<div id="contenu">
+	{%block content%} {%endblock content%}
+	</div>
 
 
 	<!-- page content -->

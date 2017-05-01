@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url('^aboutUs$',aboutUs),
     url('^category$',category),
 
-    url(r'^register$', register),
+    url(r'^register/$', register),
     url(r'^product$', product),
     
     url(r'^admin/', include(admin.site.urls)),

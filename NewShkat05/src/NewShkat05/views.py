@@ -12,7 +12,7 @@ from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.views.decorators.csrf import csrf_protect
 
-from NewShkat05.forme import RegisterForm
+from NewShkat05.forme import ContactForm, RegisterForm
 from NewShkat05.models import Category,Product
 
 
@@ -36,20 +36,19 @@ def index (request):
     
     return render_to_response('index.html',locals())
 def contact_me(request):
-    page_title = "Обратная связь"
-    tel ='мой тел:'
-    tel_mob ='мой тел(мобильный):'
-    email='мой е-мейл:'
-    address= 'мой адрес:'
+    page_title= "Связатсья с нами"
+    form = ContactForm()
+    form.contact_email=request.POST.get('email')
     
-    return render_to_response('contact_me.html',locals())
+    return render_to_response('contact_me.html',locals(),RequestContext(request))
 def aboutUs (request):
     title = 'Про нас'
     
     return render_to_response('aboutUS.html',locals())
 def register(request):
-    register_test ="Test registratura"
-    form=RegisterForm()
+    
+    reg = RegisterForm()
+    
     
     return render_to_response('register.html',locals())
     
