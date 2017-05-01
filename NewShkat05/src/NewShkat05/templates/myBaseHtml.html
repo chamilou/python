@@ -1,45 +1,48 @@
 <!DOCTYPE html >
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 {% load static from staticfiles %}
 <head>
-<link rel="stylesheet" href="	/static/css.css" type="text/css"
+<link rel="stylesheet" href="/static/css.css" type="text/css"
 	media="all" />
 <meta charset="utf-8">
-	<title>{%block title%} {%endblock%}</title>
+<title>{%block title%} titre_placeholder{%endblock%}</title>
+
 </head>
 <body>
-	<div class="body">
 
 
-		<div id="menu">
+	{%block menu%}
+	<div id="menu">
+		<a href='/register'>Регистрация</a> <a href=''> </a> <a
+			href='/category'> Категории </a> <a href='/contact_me'>Связаться
+			с нами </a> <a href='/aboutUs'>Про нас </a> {%if user.is_authenticated %}
+		<a href='/logout'>Выход</a> {%endif%} {%endblock menu%}
+	</div>
 
-			<a href='/aboutUs'>Про нас </a> {%if user.is_authenticated %} <a
-				href='logout'>Выход</a> {%else%} <a href='login'>Войти</a> {%endif%}
-			<a href='/register'>Регистрация</a> <a href=''> </a> <a
-				href='/category'> Категории </a> <a href='/contact_me'>Связаться
-				с нами </a> <a href='/logout'>Выход </a>
+	{%block login%}
 
-		</div>
-		<p>
+	<div id="input">
+		<form action="" method='POST'>
+			{%csrf_token%} <label for="username"> Логин:</label> <input
+				type="text" name="username" value="" id="username"> <label
+				for="password">Пароль:</label> <input type="password"
+				name="password" value="" id="password"> <input type="submit"
+				value="login" /> <input type="hidden" name="next"
+				value="{{ next|escape }}" />
 
-{%block body%}
-<p>
-</p>
+		</form>
+	</div>
+	<p></p>
 
-			{%block content%}    {%endblock%} 
+	{%endblock login%}
 
-
-
-
+	<div id="contenu">{%block content%} {%endblock content%}</div>
 
 
-
-			<!-- page content -->
-{%endblock%}
+	<!-- page content -->
 </body>
-<footer class = "footer">
-{%block footer%} All rights reserved {%endblock%}
-</footer>
-</div>
+<footer class="footer"> {%block footer%} All rights reserved
+	{%endblock footer%} </footer>
+
 </html>

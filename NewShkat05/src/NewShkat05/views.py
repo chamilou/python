@@ -4,18 +4,22 @@ Created on 21 Apr 2017
 @author: shamil
 '''
 from django.contrib import auth
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+from django.http import request
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
-from django.contrib.auth import authenticate, login
-from NewShkat05.models import User
-from django.http import request
-from django.http import HttpResponse
-from django.contrib.auth.models import User
-from NewShkat05.forme import RegisterForm
+from django.views.decorators.csrf import csrf_protect
 
+from NewShkat05.forme import RegisterForm
+from NewShkat05.models import Category,Product
+
+
+@csrf_protect
 def login(request):
-    title = 'login'
-    
+    title = 'Вход'
+    header="Header in Login"
     username=request.POST['username']
     password=request.POST['password']
     user =auth.authenticate(username= username,password = password)
@@ -27,7 +31,7 @@ def logout(request):
     message = " You are logout now , See you soon"
     return render_to_response('registration/logout.html',locals())
 
-def welcome_page (request):
+def index (request):
     page_title = 'Шкатулка'
     
     return render_to_response('index.html',locals())
@@ -44,15 +48,21 @@ def aboutUs (request):
     
     return render_to_response('aboutUS.html',locals())
 def register(request):
-    
+    register_test ="Test registratura"
     form=RegisterForm()
     
     return render_to_response('register.html',locals())
     
+def product(request):
+    page_title= "produkt"
+    
+    prod=Product.objects.all()
     
     
-    
+    return render_to_response('product.html',locals())   
 def category (request):
     page_title = 'Категории'
+
+    cat = Category.objects.all()
     
     return render_to_response('category.html',locals())

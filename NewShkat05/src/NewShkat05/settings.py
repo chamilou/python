@@ -25,7 +25,7 @@ SECRET_KEY = '1o^zxr95p*_4w=_-8z1(#a3vmz-qi4n!awjapzvmi1-02=1#j)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['www.daniiyal.ru','194.58.111.225', '127.0.0.1','127.0.1.1']
 
