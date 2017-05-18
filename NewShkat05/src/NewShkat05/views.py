@@ -34,11 +34,18 @@ def logout(request):
 def index (request):
     page_title = 'Шкатулка'
     
+    
     return render_to_response('index.html',locals())
 def contact_me(request):
     page_title= "Связатсья с нами"
+    contact= ''
+    
     form = ContactForm()
-    form.contact_email=request.POST.get('email')
+    
+    if request.method == 'POST':
+        contact= request.POST.get('contact_address: ','')+" and phone : "+request.POST.get('mob_Telephone')
+        
+        
     
     return render_to_response('contact_me.html',locals(),RequestContext(request))
 def aboutUs (request):

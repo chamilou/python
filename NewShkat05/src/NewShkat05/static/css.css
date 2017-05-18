@@ -1,12 +1,12 @@
 body{
-//transform:skew(-5deg,-7deg);
-    width:70%;
+//transform:skew(5deg,7deg);
+    
     height:100%;
 	background-color:lightgrey ;
 	display:table;
-	width:70%;
+	
 	padding:15px;
-	margin:auto;
+	//margin:auto;
 }
 .category_layout{
 	
@@ -20,15 +20,15 @@ text-decoration:none;
 
 input{
 	display:block;
-	
 	background-color:blue;
 	
 }
 #menu {
 	float:center;
+width:100%;
     font-family: Verdana;
     font-size: 20px;
-    background-color:brown;
+    background-color:yellow;
     text-align: center;
     border: #B1B1B1 solid;
     border-color:blue;
@@ -43,4 +43,15 @@ float:center;
 bottom:0px;
 text-align:center;
 margin:auto;
+}
+section{
+	
+	column-count:1;
+	column-rule:3px solid;
+	transform: perspective(1200px) rotateY(-9deg);
+	transition:3c all;
+	
+}
+article{
+	background-color:red;
 }

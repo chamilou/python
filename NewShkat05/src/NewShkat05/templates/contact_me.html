@@ -4,6 +4,8 @@
 <form action ="" method ="POST">
 {%csrf_token%} 
 {{form.as_p}}
-<input type = "submit" value = "Отпрвить">
+<input type='hidden' name='id_contact_address' value='{{ form.contact_address }}' >
+<input type = 'submit' value = 'enter' >
 </form>
+{{contact}}
 {%endblock content%}
