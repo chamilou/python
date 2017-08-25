@@ -4,7 +4,10 @@
 {% block login %}
 <div id="input">
 	<form action="" method='POST'>
-		{%csrf_token%} <label for="username"> Логин:</label> <input
+	
+		{%csrf_token%} 
+		
+		<label for="username"> Логин:</label> <input
 			type="text" name="username" value="" id="username"> <label
 			for="password">Пароль:</label> <input type="password" name="password"
 			value="" id="password"> <input type="submit" value="login" />
@@ -18,7 +21,9 @@ or
 	<a href='/register'>register</a>
 </p>
 {% endblock login %}
-
 {% block content %}
+{%for user in usern%}
+{{user.username}}
+{%endfor%}
 Login page
 {% endblock content %}

@@ -1,9 +1,12 @@
 {% extends 'myBaseHtml.html' %}
 
 {%block content%}
+{{message}}
 <form action ="" method ="POST">
 {%csrf_token%} 
-{{reg.as_p}}
+
+{{reg_form.as_p}}
 <input type = "submit" value = "Регистрация">
 </form>
+
 {%endblock content%}

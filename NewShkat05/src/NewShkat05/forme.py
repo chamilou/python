@@ -23,6 +23,7 @@ class RegisterForm(forms.Form):
     username= forms.CharField(label="Username", max_length=255)
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput())
     password2 = forms.CharField(label='Password (Again)', widget=forms.PasswordInput())
+                                
     
     def clean_password2(self):
         if 'password1' in self.cleaned_data:
@@ -38,7 +39,7 @@ class RegisterForm(forms.Form):
     
     
 class ContactForm(forms.Form):
-    mob_Telephone = forms.CharField(label="mobPhone", max_length=255)
+    mob_Telephone = forms.CharField(label="mobPhone", max_length=255, required=False)
 
     contact_email= forms.EmailField(label="your_email", required = True )
     
