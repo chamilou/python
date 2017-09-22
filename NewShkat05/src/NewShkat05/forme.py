@@ -12,6 +12,7 @@ from NewShkat05.models import Product,Category,  SUB_Category
 class ProductAdminForm(forms.ModelForm):
     class Meta:
         model= Product
+        fields=('name', 'slug')
         
         def clean_price(self):
             if self.cleaned_data['price']<=0:
