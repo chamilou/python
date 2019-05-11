@@ -4,8 +4,12 @@
 <form action ="" method ="POST">
 {%csrf_token%} 
 {{form.as_p}}
+
 <input type='hidden' name='id_contact_address' value='{{ form.contact_address }}' >
-<input type = 'submit' value = 'enter' >
+
+<input type = 'submit' value = 'SEND' >
+
 </form>
+
 {{contact}}
 {%endblock content%}

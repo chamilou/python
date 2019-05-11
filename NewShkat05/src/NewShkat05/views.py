@@ -62,6 +62,7 @@ def aboutUs (request):
     
     return render_to_response('aboutUS.html',locals())
 def register(request):
+    title= "Registraziya"
     username=password=''
     if request.method =='POST':
         reg_form = RegisterForm(request.POST)

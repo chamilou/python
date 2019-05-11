@@ -1,5 +1,5 @@
 {% extends 'myBaseHtml.html' %}
-
+{%block title%} {{title}} {%endblock%}
 {%block content%}
 {{message}}
 <form action ="" method ="POST">
@@ -8,5 +8,6 @@
 {{reg_form.as_p}}
 <input type = "submit" value = "Регистрация">
 </form>
+
 
 {%endblock content%}
